@@ -125,7 +125,7 @@ def _loads(text=None, fp=None, template=None, colored=None, comments=None, **kwa
         msg = '{}\n{}\n\nError at'.format(error_desc, sample)
         raise json.JSONDecodeError(msg, doc=text, pos=last_line_pos)
 
-    except lark.UnexpectedCharacters as e:
+    except (lark.UnexpectedCharacters, lark.UnexpectedToken) as e:
         # handle exception from Lark parser (used for commentjson)
         sample = preview_text(text,
                               max_chars=_PREVIEW_CHARS,
