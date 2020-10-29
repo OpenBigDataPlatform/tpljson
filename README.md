@@ -5,6 +5,7 @@
 [![Supported Versions](https://img.shields.io/pypi/pyversions/tpljson.svg)](https://github.com/OpenBigDataPlatform/tpljson)
 [![Supported Versions](https://img.shields.io/pypi/v/tpljson.svg)](https://github.com/OpenBigDataPlatform/tpljson)
 [![Supported Versions](https://img.shields.io/conda/vn/conda-forge/tpljson.svg)](https://github.com/OpenBigDataPlatform/tpljson)
+[![Coverage Status](https://coveralls.io/repos/github/OpenBigDataPlatform/tpljson/badge.svg?branch=master)](https://coveralls.io/github/OpenBigDataPlatform/tpljson?branch=master)
 
 A Templating Json package that implements the official **Python** `json` interface.
 
