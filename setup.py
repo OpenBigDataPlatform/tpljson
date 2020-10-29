@@ -5,7 +5,7 @@ To Build:
 
 To Install from PyPi:
 
-    python3 setup.py install hadoopmetrics
+    pip3 install tpljson
 
 To Test:
     # from directory where pytest.ini is
@@ -15,12 +15,13 @@ from setuptools import setup
 
 setup(
     name='tpljson',
-    version='0.1.0',
+    version='0.1.1',
+    url='https://github.com/OpenBigDataPlatform/tpljson',
     description='json library replacement supporting variable substitution, and self-references',
     long_description=open('README.md').read(),
-    author='OpenBigDataProject',
+    author='OpenBigDataPlatform',
     author_email='',
-    license='',
+    license='MIT',
     packages=['tpljson'],
     keywords="json template",
     classifiers=[
@@ -35,7 +36,8 @@ setup(
       "Programming Language :: Python :: 3.8",
       "Programming Language :: Python :: 3.9",
     ],
-    zip_safe=True,
+    zip_safe=False,
+    include_package_data=True,
     install_requires=[
         'objectpath==0.6.1',
         'colorama==0.4.4',
