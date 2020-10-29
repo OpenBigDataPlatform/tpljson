@@ -49,7 +49,12 @@ jobs:
       # Run tox using the version of Python in `PATH`
       run: |
         tox -e py
-    - name: README Lint check
+    # make sure markdown document is parseable.
+    - name: README Markdown check
+      run: |
+        pip3 install markdown
+        python3 -m markdown ./README.md -v
+    - name: README Link check
       uses: gaurav-nelson/github-action-markdown-link-check@v1
       with:
         use-verbose-mode: 'yes'
