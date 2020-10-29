@@ -222,7 +222,8 @@ Error at: line 5 column 18 (char 68)'''
 // }
                ''')
         print(excinfo.value)
-        self.assertIn('''Error Decoding JSON String - Incomplete Document''', str(excinfo.value))
+        self.assertIn('''Error Decoding JSON String - Unexpected Character''', str(excinfo.value))
+        self.assertIn('''"four": 4''', str(excinfo.value))
         self.assertIn('''\x1b[30m\x1b[103m        "four": 4\x1b[0m''', str(excinfo.value))
 
     def test_json_exception(self):
@@ -242,11 +243,12 @@ Error at: line 5 column 18 (char 68)'''
             loads('{"hello"}')
 
     def test_commentjson_exception_eof(self):
-        # the underlying parser for commentjson can sometimes emit lark.exceptions.UnexpectedEOF
-        # this triggers that condition.
+        # test json structure with no closing
         with pytest.raises(json.JSONDecodeError) as excinfo:
             loads('{"hello": 1 //} #asdf', colored=False)
-        self.assertIn('''Error Decoding JSON String - Incomplete Document''', str(excinfo.value))
+
+        self.assertIn('''Error Decoding JSON String - Unexpected Character''', str(excinfo.value))
+
         with pytest.raises(json.JSONDecodeError) as excinfo:
             loads('''
             {
@@ -256,7 +258,7 @@ Error at: line 5 column 18 (char 68)'''
             "four": 4
             // }
             ''', colored=False)
-        self.assertIn('''Error Decoding JSON String - Incomplete Document''', str(excinfo.value))
+        self.assertIn('''Error Decoding JSON String - Unexpected Character''', str(excinfo.value))
         self.assertIn('''>>  "four": 4  <<''', str(excinfo.value))
 
         with pytest.raises(json.JSONDecodeError) as excinfo:
