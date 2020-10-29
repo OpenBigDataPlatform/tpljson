@@ -39,7 +39,9 @@ setup(
     zip_safe=True,
     install_requires=[
         'objectpath==0.6.1',
-        'lark-parser>=0.7.1,<0.8.0',
+        'colorama==0.4.4',
+        'commentjson==0.9.0',
+        'lark-parser==0.7.8',
     ],
     python_requires='>=3.5',
     test_suite="tests"
