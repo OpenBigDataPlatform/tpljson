@@ -57,8 +57,8 @@ def _read_template(template, **kwargs):
     elif isinstance(template, io.IOBase):
         template = loads(template.read(), **kwargs)
     else:
-        raise TypeError(f'"template" argument unsupported type: {type(template)}, '
-                               f'must be one of [None, bytes, str, dict, list, io.IOBase]')
+        raise TypeError('"template" argument unsupported type: {}, '
+                        'must be one of [None, bytes, str, dict, list, io.IOBase]'.format(type(template)))
     return template
 
 

@@ -18,10 +18,3 @@ class TplJsonException(TplException):
     Exception for when JSON error is encountered
     """
     pass
-
-
-class TplJsonDecodeError(TplJsonException):
-    """
-    Exception for when json DECODING fails
-    """
-    pass

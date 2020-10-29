@@ -50,7 +50,7 @@ class TplAbstract:
         matched = tree.execute(search)
         if matched is None or isinstance(matched, REGEX_TYPE):
             excvalue = value.lstrip('{').rstrip('}').strip()
-            raise TplUnmatched(f'Template value not matched: {excvalue}')
+            raise TplUnmatched('Template value not matched: {}'.format(excvalue))
         if isinstance(matched, GeneratorType):
             matched = list(matched)
         self._expire_tree()
@@ -166,7 +166,7 @@ class TplStringFormatter(string.Formatter):
         # parse the value from the dictionary
         matched = self._tree.execute(key)
         if matched is None or isinstance(matched, REGEX_TYPE):
-            raise TplUnmatched(f'Template value not matched: {key}')
+            raise TplUnmatched('Template value not matched: {}'.format(key))
         if isinstance(matched, GeneratorType):
             matched = list(matched)
         return matched
