@@ -15,7 +15,7 @@ from setuptools import setup
 
 setup(
     name='tpljson',
-    version='0.1.2',
+    version='0.1.3',
     url='https://github.com/OpenBigDataPlatform/tpljson',
     description='json compatible library supporting templating',
     long_description=open('README.md').read(),
