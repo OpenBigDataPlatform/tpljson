@@ -1,6 +1,6 @@
 # tpljson
 
-[![Tests](https://github.com/OpenBigDataPlatform/tpljson/workflows/tests/badge.svg)](https://github.com/OpenBigDataPlatform/tpljson/actions?query=workflow%3Atests)
+![tests](https://github.com/OpenBigDataPlatform/tpljson/workflows/tests/badge.svg?branch=master)
 [![Docs](https://readthedocs.org/projects/tpljson/badge/?style=flat)](https://github.com/OpenBigDataPlatform/tpljson)
 [![Supported Versions](https://img.shields.io/pypi/pyversions/tpljson.svg)](https://github.com/OpenBigDataPlatform/tpljson)
 [![Supported Versions](https://img.shields.io/pypi/v/tpljson.svg)](https://github.com/OpenBigDataPlatform/tpljson)
