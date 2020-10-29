@@ -15,14 +15,14 @@ from setuptools import setup
 
 setup(
     name='tpljson',
-    version='0.1.3',
+    version='0.1.4',
     url='https://github.com/OpenBigDataPlatform/tpljson',
     description='json compatible library supporting templating',
     long_description=open('README.md').read(),
-    long_description_content_type='Description-Content-Type: text/markdown',
+    long_description_content_type='text/markdown',
     author='OpenBigDataPlatform',
     author_email='',
-    license='MIT',
+    license='MIT License',
     packages=['tpljson'],
     keywords="json template",
     classifiers=[

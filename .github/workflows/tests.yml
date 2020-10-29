@@ -50,10 +50,11 @@ jobs:
       run: |
         tox -e py
     # make sure markdown document is parseable.
-    - name: README Markdown check
+    - name: Check setup.py and README
       run: |
-        pip3 install markdown
-        python3 -m markdown ./README.md -v
+        pip3 install twine
+        python3 setup.py sdist bdist_wheel
+        twine check dist/*
     - name: README Link check
       uses: gaurav-nelson/github-action-markdown-link-check@v1
       with:

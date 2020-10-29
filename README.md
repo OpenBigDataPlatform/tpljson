@@ -27,7 +27,7 @@ pip3 install tpljson
 
 ## Usage Example 1
 **Define `contact.json` as**
-```javascript
+```json
 // this is another comment, multi-line comments are not supported.
 {
   "first_name": "Peter", // first_name - comments can appear at the end of a line
@@ -95,7 +95,7 @@ print(json.dumps(d, indent=4))
 ```
 
 **Output**:
-```
+```json
 {
     "user_id": "u381815",
     "cluster": "hive-cluster",
