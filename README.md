@@ -26,7 +26,7 @@ pip3 install tpljson
 
 ## Usage Example 1
 **Define `contact.json` as**
-```json
+```javascript
 // this is another comment, multi-line comments are not supported.
 {
   "first_name": "Peter", // first_name - comments can appear at the end of a line
@@ -39,20 +39,19 @@ pip3 install tpljson
 
 **Load `contact.json` using `tpljson`**
 ```python
-from pprint import pprint
 import tpljson as json
 d = json.load(open('contact.json'))
-pprint(d)
+print(json.dumps(d, indent=4))
 ```
 **Output**
-```properties
-{'contact': 'Peter Henderson\n'
-            'Cell: 3338675309\n'
-            'Email: Peter.Henderson@example.org',
- 'email': 'Peter.Henderson@example.org',
- 'first_name': 'Peter',
- 'last_name': 'Henderson',
- 'phone': '3338675309'}
+```json
+{
+    "first_name": "Peter",
+    "last_name": "Henderson",
+    "phone": "3338675309",
+    "email": "Peter.Henderson@example.org",
+    "contact": "Peter Henderson\nCell: 3338675309\nEmail: Peter.Henderson@example.org"
+}
 ```
 
 
@@ -64,7 +63,7 @@ A more
 {
   "user_id": "u381815",
   "cluster": "hive-cluster",
-  "groups": ["finance", ""],
+  "groups": ["finance", "accounting"],
   "description": "Permissions for user Nicholas",
   "create_role": [
     {"role": "{$.user_id}"}
@@ -89,14 +88,70 @@ A more
 
 **Load `permissions.json` using `tpljson`**
 ```python
-from pprint import pprint
 import tpljson as json
 d = json.load(open('permissions.json'))
-pprint(d)
+print(json.dumps(d, indent=4))
+```
+
+**Output**:
+```
+{
+    "user_id": "u381815",
+    "cluster": "hive-cluster",
+    "groups": [
+        "finance",
+        "accounting"
+    ],
+    "description": "Permissions for user Nicholas",
+    "create_role": [
+        {
+            "role": "u381815"
+        }
+    ],
+    "grant_role": [
+        {
+            "group": "u381815",
+            "role": "u381815"
+        }
+    ],
+    "grant_privilege": [
+        {
+            "privilege": "select",
+            "object": "database",
+            "patterns": [
+                "finance",
+                "accounting"
+            ],
+            "role": "u381815"
+        },
+        {
+            "privilege": "all",
+            "object": "database",
+            "name": "u381815",
+            "role": "u381815"
+        },
+        {
+            "privilege": "all",
+            "object": "uri",
+            "name": "'hdfs://hive-cluster/user/u381815'",
+            "role": "u381815"
+        }
+    ],
+    "create_database": [
+        {
+            "name": "u381815",
+            "owner": "u381815"
+        }
+    ],
+    "sql": [
+        "SHOW GRANT ROLE u381815",
+        "SHOW ROLE GRANT GROUP u381815"
+    ]
+}
 ```
 
 ## Implementation
-- Note that the order of values matters in the `json`
+- Note that the order of values matters in the `json`, if one value depends on another.
 - `commentjson` is used internally to render comments, can be disabled via `comments=false` in `load` and `loads`.
 - errors are colorized by default via `colorama`
 
