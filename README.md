@@ -1,12 +1,13 @@
 # tpljson
-
+![PyPI](https://img.shields.io/pypi/v/tpljson)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tpljson)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/tpljson)  
 ![tests](https://github.com/OpenBigDataPlatform/tpljson/workflows/tests/badge.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/OpenBigDataPlatform/tpljson/badge.svg?branch=master)](https://coveralls.io/github/OpenBigDataPlatform/tpljson?branch=master)
 [![Docs](https://readthedocs.org/projects/tpljson/badge/?style=flat)](https://github.com/OpenBigDataPlatform/tpljson)
-[![Supported Versions](https://img.shields.io/pypi/pyversions/tpljson.svg)](https://github.com/OpenBigDataPlatform/tpljson)
-[![Supported Versions](https://img.shields.io/pypi/v/tpljson.svg)](https://github.com/OpenBigDataPlatform/tpljson)
-[![Supported Versions](https://img.shields.io/conda/vn/conda-forge/tpljson.svg)](https://github.com/OpenBigDataPlatform/tpljson)
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+
+
 A Templating Json package that implements the official **Python** `json` interface.
 
 `tpljson` works by referencing placeholder template strings into your json file... like `{$.mykey}`  
