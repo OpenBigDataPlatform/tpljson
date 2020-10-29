@@ -42,6 +42,6 @@ setup(
         'commentjson==0.9.0',
         'lark-parser==0.7.8',
     ],
-    python_requires='>=3.5',
+    python_requires='>=3.6',
     test_suite="tests"
 )
