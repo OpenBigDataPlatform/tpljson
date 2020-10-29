@@ -1,6 +1,6 @@
 # this tests that documentation compiles without error
 name: "Pull Request Docs Check"
-on: pull_request
+on: [push, pull_request]
 
 jobs:
   docs:
